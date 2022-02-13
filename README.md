@@ -1,29 +1,26 @@
 # Random String Generator
 
-**File contents:**
+## Instructions
 
-- set_secret.js
-- get_secret.js
-- secret.json
+Must have **Node** installed.
 
-## Usage
-
-1. To add a word and it's random string do:
+1. To set a random string do:
 
 ```bash
 node set_secret.js
 ```
 
-then type anything to get its random String Those words will be added to secret.json 
+Then input anything you want in readline it will be added with a random string to secret.json.
 
 <br/>
 
-2. To get the word and it's random string do:
+2. To get the existing random string do:
 
 ```bash
 node get_secret.js
 ```
 
-then type the string you added to get the data
+then type what you recently added or is stored in secret.json.
 
-secret.json file must have **{ }** to work as json data.
+
+3. ##### Add **{ }** in secret.json file if empty or any error.
