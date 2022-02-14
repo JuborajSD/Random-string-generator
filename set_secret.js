@@ -7,7 +7,7 @@ function setSecret() {
     input: process.stdin,
     output: process.stdout,
   });
-  readline.question(`#~ Add your word's secret ~> \n`, (word_set) => {
+  readline.question(`#~ Add your word's to get it's secret ~> \n`, (word_set) => {
     //generate random fixed secret for a word
     var chars =
       "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
@@ -41,7 +41,7 @@ function setSecret() {
               return;
             }
           };
-          //set word and secret to string data
+          //set word and secret to json string data
           const jsonData = JSON.stringify(data, null, 1);
           fs.writeFile(file, jsonData, finished);
           console.log("Word saved to secret data!!!");
