@@ -1,6 +1,6 @@
 const fs = require("fs");
 function getSecret() {
-  //prompt text data
+  //prompt input in terminal
   const readline = require("readline").createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -15,8 +15,8 @@ function getSecret() {
       try {
         const client = JSON.parse(data);
         Object.keys(client).forEach(function (key) {
-          if (word_get === client[key].word) {
-            console.log("Found ~>\n\n",client[key],"\n");
+          if (word_get === key) {
+            console.log("Found ~>\n\n",key,client[key],"\n");
             return;
           }
         });
