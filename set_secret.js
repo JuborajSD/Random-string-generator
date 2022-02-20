@@ -1,4 +1,3 @@
-const { error } = require("console");
 const fs = require("fs");
 
 function setSecret() {
@@ -19,17 +18,16 @@ function setSecret() {
     }
     //get json file and re write
     const data_set = JSON.parse(fs.readFileSync("./secret.json"));
-    //set that words secret and save to json data
-    const setDictionary = (word) => {
+    //set that added data secret and save to json data
+    const setDictionary = (input_data) => {
       const newInput = {
-        word: `${word}`,
         secret: `${secret}`,
       };
-      if (newInput[word] !== data_set[word]) {
+      if (newInput[input_data] !== data_set[input_data]) {
           console.log("Already exists!!!"); 
       }
-      else if(newInput[word] === data_set[word]) {
-        data_set[word] = newInput;  
+      else if(newInput[input_data] === data_set[input_data]) {
+        data_set[input_data] = newInput;  
         saveData(data_set, "secret.json");
       }
     };
