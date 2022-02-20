@@ -6,7 +6,7 @@ function getSecret() {
     output: process.stdout,
   });
   readline.question(`Get your words secret ~> \n`, (word_get) => {
-    //get json file and re write
+    //get json file and read
     fs.readFile("./secret.json", (err, data) => {
       if (err) {
         console.log("File reading failed", err);
@@ -28,4 +28,4 @@ function getSecret() {
     readline.close();
   });
 }
-return getSecret();
+getSecret();
