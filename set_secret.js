@@ -7,7 +7,7 @@ function setSecret() {
     input: process.stdin,
     output: process.stdout,
   });
-  readline.question(`#~ Add your word's to get it's secret ~> \n`, (word_set) => {
+  readline.question(`#~ Add anything to get it's secret ~> \n`, (word_set) => {
     //generate random fixed secret for a word
     var chars =
       "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
@@ -21,15 +21,15 @@ function setSecret() {
     const data_set = JSON.parse(fs.readFileSync("./secret.json"));
     //set that words secret and save to json data
     const setDictionary = (word) => {
-      const newWord = {
+      const newInput = {
         word: `${word}`,
         secret: `${secret}`,
       };
-      if (newWord[word] !== data_set[word]) {
+      if (newInput[word] !== data_set[word]) {
           console.log("Already exists!!!"); 
       }
-      else if(newWord[word] === data_set[word]) {
-        data_set[word] = newWord;  
+      else if(newInput[word] === data_set[word]) {
+        data_set[word] = newInput;  
         saveData(data_set, "secret.json");
       }
     };
@@ -50,4 +50,4 @@ function setSecret() {
     readline.close();
   });
 }
-return setSecret();
+setSecret();
